@@ -10,6 +10,7 @@ public interface PocketService {
 
     PocketResponse create(PocketRequest request);
     PocketResponse getById(String id);
+    Pocket getPocketById(String id);
     List<Pocket> getAllByUserId(String userId);
     PocketResponse update(PocketRequest request);
     void deleteById(String id);

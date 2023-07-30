@@ -60,6 +60,11 @@ public class PocketServiceImpl implements PocketService {
     }
 
     @Override
+    public Pocket getPocketById(String id) {
+        return findByIdOrThrowError(id);
+    }
+
+    @Override
     public List<Pocket> getAllByUserId(String userId) {
         List<Pocket> pockets = pocketRepository.findAllByUser_Id(userId);
         if (pockets.isEmpty()) throw  new ResponseStatusException(HttpStatus.NOT_FOUND, "pockets not found");
